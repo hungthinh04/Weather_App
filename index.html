@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌦 Weather SPA</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <canvas id="particles"></canvas>
+
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <h2>🌦 Weather SPA</h2>
+        <button id="themeToggle" title="Toggle Theme">🌙</button>
+      </header>
+
+      <!-- Search Section -->
+      <section class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city..." />
+        <button id="searchBtn">🔍 Search</button>
+        <div id="suggestions"></div>
+      </section>
+
+      <!-- Loading Spinner -->
+      <div class="spinner" id="spinner"></div>
+
+      <!-- Weather Result -->
+      <section class="result-card" id="result" style="display: none">
+        <h3 id="cityName">City Name</h3>
+        <p class="temp" id="temperature">-- °C</p>
+        <p id="description">Description</p>
+        <div class="forecast" id="forecast"></div>
+      </section>
+
+      <!-- Map -->
+      <div id="map" class="map"></div>
+
+      <!-- Alert Box -->
+      <div id="alertBox" class="alert-box">
+        <span id="alertIcon">⚠️</span>
+        <span id="alertText">Weather notification</span>
+      </div>
+
+      <!-- History -->
+      <section class="history" id="history">
+        <h4>Recent Searches</h4>
+        <ul></ul>
+      </section>
+
+      <button id="clearBtn" class="clear-btn">🗑 Clear History</button>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="./src/main.js"></script>
+    <script src="./src/particles.js"></script>
+  </body>
+</html>
